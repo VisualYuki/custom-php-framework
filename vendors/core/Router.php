@@ -52,15 +52,16 @@ class Router
      * @param string $url входящий URL
      * @return void
      */
-    public static function dispatch($url)
+    public static function dispatch(string $url)
+
+
     {
         if (self::matchRoute($url)) {
             $controller = self::$route["controller"];
 
-            if(class_exists($controller)) {
+            if (class_exists($controller)) {
                 echo "OK";
-            }
-            else {
+            } else {
                 echo "Контроллер <b>$controller</b> не найден";
             }
         } else {
